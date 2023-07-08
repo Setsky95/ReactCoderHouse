@@ -6,9 +6,10 @@ const ListadoNav = () => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-evenly' , gap: '10px'   }}>
     
-    <li style={{color: "peru"}}>INICIO</li>
-    <li>COLECCIONES</li>
-    <li>CAMPAÑAS</li>
+    <li>Restaurantes</li>
+    <li>Historial</li>
+    <li>Lo último</li>
+
    
     
     </Box>)
