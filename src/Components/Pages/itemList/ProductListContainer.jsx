@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import ProductList from "./ProductList";
-import { restos } from "../../../productMock";
+import { products } from "../../../productMock";
  
 const ProductListContainer = () => {
   //////////////////LOGICA//////////////////////////
@@ -8,7 +8,7 @@ const ProductListContainer = () => {
   const [items, setItems] = useState ([]);
 useEffect (()=>{
   const tarea = new Promise ((resolve, reject)=>{
-    resolve(restos);
+    resolve(products);
   });
   
   tarea

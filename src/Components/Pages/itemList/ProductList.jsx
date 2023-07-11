@@ -2,7 +2,6 @@ import ProductCard from "../../Common/ProductCard/ProductCard";
 import { Box } from '@mui/material';
 
 const ProductList = ({items}) => {
-  console.log(items);
   return (
     <Box sx={{
      backgroundColor: "primary.light",
