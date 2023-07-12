@@ -5,6 +5,12 @@ const ProductList = ({items}) => {
   return (
     <Box sx={{
      backgroundColor: "primary.light",
+     paddingBottom: "100px",
+     paddingTop: "100px",
+     paddingRight:"20px",
+     paddingLeft:"20px",
+
+
     }}>
     <section style ={{width: "100%", display: "flex", justifyContent: "space-evenly", flexWrap:"wrap", gap:"5px"}}>
       {items.map((item) => {

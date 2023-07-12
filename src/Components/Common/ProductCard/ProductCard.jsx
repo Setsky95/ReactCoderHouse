@@ -11,8 +11,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{  marginTop: "10px",borderRadius:"1.8rem" }} >
-      <CardMedia sx={{ height: 400 }} image={item.img} title="green iguana" />
+    <Card sx={{  marginTop: "10px",borderRadius:"1.8rem", width:"15rem", height:"22rem" }} >
+      <CardMedia sx={{ height: "150px" }} image={item.img} title="green iguana" />
       <CardContent>
         <Typography
           gutterBottom
@@ -45,7 +45,7 @@ const ProductCard = ({ item }) => {
         <Link to={`/itemDetail/${item.id}`}>
           <Button size="small">Info</Button>
         </Link>
-        <Button size="small">Agregar al carrito</Button>
+        <Button size="small">Seleccionar</Button>
       </CardActions>
     </Card>
   );

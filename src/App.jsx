@@ -6,9 +6,9 @@ import ProductList from './Components/Pages/itemList/ProductList'
 import ProductListContainer from './Components/Pages/itemList/ProductListContainer'
 import ItemDetail from './Components/Pages/itemDetail/ItemDetail'
 import ItemDetailContainer from './Components/Pages/itemDetail/ItemDetailContainer'
-
 import {BrowserRouter, Routes, Route}  from "react-router-dom"
 import Cart from './Components/Pages/Cart/Cart'
+import CheckOutContainer from './Components/Pages/checkout/CheckOutContainer'
 
 
 function App() {
@@ -19,8 +19,11 @@ function App() {
   <Route element={<NavBar/>}>
   <Route path="/" element={<ProductListContainer />} />
   <Route path="/cart" element={<Cart/>} />
+  <Route path="/cheackout" element={<CheckOutContainer/>} />
+  <Route path="/category/:categoryName" element ={<ProductListContainer/>} />
   <Route path="/itemDetail/:id" element ={<ItemDetailContainer/>} />
   </Route>
+
   <Route path="*" element={<h1>NOT FOUND</h1>} />
 </Routes>
 </BrowserRouter>
