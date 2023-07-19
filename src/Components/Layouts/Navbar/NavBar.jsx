@@ -18,8 +18,10 @@ const NavBar = () => {
           alignItems: "center",
         }}
       >
-        <LogoNav />
-        <ListadoNav />
+    <Link to="/" >
+    <img src="src\Imgs\logoipsum-225.svg"alt="logo"/> 
+    </Link>       
+     <ListadoNav />
         <CarritoNav />
       </Box>
 
