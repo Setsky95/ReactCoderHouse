@@ -26,6 +26,11 @@ const clearCart = () =>{
   setCart ([])
 }
 
+const getQuantityById = (id) => {
+  let productoID = cart.find(( elemento ) => elemento.id === +id)
+
+  return productoID?.quantity
+}
 
 const deleteById = (id) => {
 let newArr= cart.filter ((elemento) =>  elemento.id !== id)
@@ -36,7 +41,8 @@ setCart(newArr)
     setCart,
     addToCart,
     clearCart,
-    deleteById
+    deleteById,
+    getQuantityById,
     
   };
   return  ( 
