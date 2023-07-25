@@ -3,6 +3,8 @@ import { useEffect, useState, useContext } from "react";
 import { products } from "../../../productMock";
 import {useParams}  from "react-router-dom"
 import { CartContext } from "../../../context/CartContext";
+import { db } from "../../../firebaseConfig";
+import {getDoc, collection, doc} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -11,12 +13,10 @@ const ItemDetailContainer = () => {
 const {addToCart, getQuantityById} = useContext(CartContext)
 
   useEffect(() => {
-    let promesa = new Promise((resolve, reject) => {
-      let productSelected = products.find((product) => product.id === +id);
-      resolve(productSelected);
-    })
+    let refCollection = collection (db, "products")
+ let refDoc = doc(refCollection, id)
+ getDoc(refDoc).then (res => setProduct ({...res.data(), id:res.id}) )
 
-    promesa.then((res) => setProduct(res)).catch((err) => console.log(err))
 
   }, [id]);
 

@@ -4,7 +4,7 @@ export const products = [
           "id": 1,
           "title": "El sí entre viñedos",
           "stock": 3,
-          "description": "Te casaste, tuviste una hermosa fiesta en un viñedo, el clima era cálido y todo estaba perfecto",
+          "descriptionTe casaste, tuviste una hermosa fiesta en un viñedo, el clima era cálido y todo estaba perfecto": "",
           "feel": "Amor",
           "price": 6500,
           "available": true,
