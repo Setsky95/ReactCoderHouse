@@ -11,7 +11,6 @@ import CheckOutContainer from './Components/Pages/checkout/CheckOutContainer'
 import NavBar from './Components/Layouts/Navbar/NavBar'
 import CartContextComponent from './context/CartContext'
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +22,8 @@ function App() {
             <Route path="/cheackout" element={<CheckOutContainer />} />
             <Route path="/category/:categoryName"element={<ProductListContainer />}/>
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+            <Route path="/checkout" element={<CheckOutContainer />} />
+
             </Route>
 
           <Route path="*" element={<h1>NOT FOUND</h1>} />

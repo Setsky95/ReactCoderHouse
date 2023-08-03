@@ -14,11 +14,11 @@ const ProductListContainer = () => {
 useEffect (()=>{
 let consulta;
 
-let producsCollection = collection(db, "products");
+let productsCollection = collection(db, "products");
 if (!categoryName) {
-  consulta = producsCollection;
+  consulta = productsCollection;
 } else {
-  consulta = query(producsCollection, where("category", "==", categoryName));
+  consulta = query(productsCollection, where("feel", "==", categoryName));
 }
 
 getDocs(consulta).then(res=> {
