@@ -27,10 +27,10 @@ const ItemDetail = ({ product, agregarAlCarrito,QuantityOnCart }) => {
       </Box>
       <Box style={{ display: "flex", alingcontent: "center", marginTop: "5rem" }}>
         
-        <Typography style={{ width: "35vh", }}>
-          <h2 className="webFont">{product.description}</h2>
-          <Box style={{ marginTop: "5rem" }} >
-          <h4 className="webFont">${product.price}</h4>
+        <Typography variant="h6" style={{ width: "35vh", }}>
+          {product.description}
+          <Box  style={{ marginTop: "5rem" }} >
+          <Typography variant="h6" className="webFont">${product.price} </Typography>
           <CounterContainer
             stock={product.stock}
             agregarAlCarrito={agregarAlCarrito}

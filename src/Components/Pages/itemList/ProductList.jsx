@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 
 const ProductList = ({items}) => {
   return (
+    <div>
     <Box sx={{
      backgroundColor: "primary.light",
      paddingBottom: "100px",
@@ -18,6 +19,7 @@ const ProductList = ({items}) => {
       })}
     </section>
     </Box>
+    </div>
   );
 };
 

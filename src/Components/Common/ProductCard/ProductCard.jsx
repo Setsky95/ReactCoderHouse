@@ -29,11 +29,11 @@ const ProductCard = ({ item }) => {
           sx={{ display: "flex", justifyContent: "space-evenly" }}
         >
           <Typography>
-            <img class="icon" src={item.icon}></img>
+            <img className="icon" src={item.icon}></img>
           </Typography>
 
           <Typography>
-            <p>${item.price}</p>
+            ${item.price}
           </Typography>
         </Typography>
 

@@ -43,8 +43,8 @@ addDoc(ordersCollections,order).then( res => setOrderId(res.id));
 
 cart.forEach ((product) =>{
   updateDoc (doc(db, "products", product.id),{stock: product.stock - product.quantity})
-}) ,
-console.log("actualizado");
+}) 
+
 
 
 },

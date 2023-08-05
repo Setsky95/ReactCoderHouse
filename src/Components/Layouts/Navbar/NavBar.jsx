@@ -4,8 +4,8 @@ import CarritoNav from './CarritoNav';
 import { Box } from '@mui/material';
 import {Outlet} from "react-router-dom";
 import {Link} from "react-router-dom";
-import LogoNav from '../../Common/LogoNav';
 import Footer from '../Footer';
+import LogoNav from './LogoNav';
 
 
 
@@ -20,14 +20,11 @@ const NavBar = () => {
           alignItems: "center",
         }}
       >
-        <Link to="/">
-          <img src="src\Imgs\logoipsum-225.svg" alt="logo" />
-        </Link>
-        
+{/*           <LogoNav/>
+ */}
         <ListadoNav />
-       
+
         <CarritoNav />
-       
       </Box>
 
       <Outlet />
