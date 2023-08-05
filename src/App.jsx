@@ -25,6 +25,8 @@ function App() {
             <Route path="/checkout" element={<CheckOutContainer />} />
 
             </Route>
+            
+
 
           <Route path="*" element={<h1>NOT FOUND</h1>} />
         </Routes>

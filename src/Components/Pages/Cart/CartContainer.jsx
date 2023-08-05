@@ -3,11 +3,13 @@ import { Button } from '@mui/material';
 import { CartContext } from '../../../context/CartContext';
 import './CartContainer.css';
 import CartEmptyContainer from './CartEmptyContainer';
+import { Link } from 'react-router-dom';
+import CheackOut from '../checkout/CheackOut';
 
 
 const CartContainer = () => {
-  const { cart, clearCart, deleteById } = useContext(CartContext);
-
+  const { cart, clearCart, deleteById, getTotalPrice } = useContext(CartContext);
+let total = getTotalPrice()
   return (
     cart.length === 0 ? (
       <CartEmptyContainer/>
@@ -32,7 +34,11 @@ const CartContainer = () => {
             </div>
           ))}
 
+          <h2>total: {total} </h2>
           <Button sx={{ border: "2px solid lightblue" }} onClick={clearCart}>LIMPIAR CARRITO</Button>
+          <Link to="/checkout">
+          <Button sx={{ border: "2px solid lightblue" }}>FINALIZAR COMPRA</Button>
+          </Link>
         </div>
       </>
     )

@@ -7,9 +7,11 @@ import {Link} from "react-router-dom";
 import LogoNav from '../../Common/LogoNav';
 import Footer from '../Footer';
 
+
+
 const NavBar = () => {
   return (
-    <div >
+    <div>
       <Box
         sx={{
           margin: "30px",
@@ -18,15 +20,18 @@ const NavBar = () => {
           alignItems: "center",
         }}
       >
-    <Link to="/" >
-    <img src="src\Imgs\logoipsum-225.svg"alt="logo"/> 
-    </Link>       
-     <ListadoNav />
+        <Link to="/">
+          <img src="src\Imgs\logoipsum-225.svg" alt="logo" />
+        </Link>
+        
+        <ListadoNav />
+       
         <CarritoNav />
+       
       </Box>
 
       <Outlet />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

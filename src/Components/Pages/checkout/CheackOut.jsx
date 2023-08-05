@@ -1,14 +1,24 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { Padding } from "@mui/icons-material";
+import { DoorBack, Padding } from "@mui/icons-material";
 import { useFormik } from "formik";
 import * as Yup from "yup"
+import { CartContext } from "../../../context/CartContext";
+import { db } from "../../../firebaseConfig";
+import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";
+import OrderIdSucces from "./OrderIdSucces";
+
 
 
 
 const CheackOut = () => {
+
+
+  const {cart,getTotalPrice } = useContext(CartContext)
+  const [orderId, setOrderId] = useState ("")
+  let total =  getTotalPrice()
 
   const navigate = useNavigate() //el hook devuelve una función.
 
@@ -19,8 +29,23 @@ initialValues: {
   tel:"",
   email:"",
 },
-onSubmit: (data) => {
-  console.log(data);
+
+onSubmit: (data) => { //FUNCION QUE VA A DISPARARSE CON EL SUBMIT//
+let order ={ 
+buyer: data,
+items: cart,
+total: total,
+date:serverTimestamp() };
+
+// CREACION DE ORDEN QUE VA A IR A FIRESTORE //
+let ordersCollections = collection ( db,"orders" )
+addDoc(ordersCollections,order).then( res => setOrderId(res.id));
+
+cart.forEach ((product) =>{
+  updateDoc (doc(db, "products", product.id),{stock: product.stock - product.quantity})
+}) ,
+console.log("actualizado");
+
 
 },
 validationSchema: Yup.object({
@@ -33,30 +58,31 @@ validateOnChange: false
     });
   
 
-    console.log(errors)
-
-  
-  
-  
-  
  return (
    <div>
-      <form onSubmit={handleSubmit}>
-      <div>
-      <TextField id="standard-basic" label="Nombre" variant="standard" name="nombre" onChange={handleChange} error={ errors.nombre} helperText={errors.nombre} />
-      <TextField id="standard-basic" label="Apellido" variant="standard" name="apellido" onChange={handleChange} error={ errors.apellido} helperText={errors.apellido} />
-      <TextField id="standard-basic" label="Tel." variant="standard" name="tel" onChange={handleChange} error={ errors.tel} helperText={errors.tel} />
-      <TextField id="standard-basic" label="Email" variant="standard" name="email" onChange={handleChange} error={ errors.email}  helperText={errors.email} />
+      {
+        orderId? /* está generada la orden? */  
+        (<OrderIdSucces orderId={orderId} />) 
+        :/* sino cargá esto */ 
+        (  
+        <form onSubmit={handleSubmit}>
+          <div>
+          <TextField id="standard-basic" label="Nombre" variant="standard" name="nombre" onChange={handleChange} error={ errors.nombre} helperText={errors.nombre} />
+          <TextField id="standard-basic" label="Apellido" variant="standard" name="apellido" onChange={handleChange} error={ errors.apellido} helperText={errors.apellido} />
+          <TextField id="standard-basic" label="Tel." variant="standard" name="tel" onChange={handleChange} error={ errors.tel} helperText={errors.tel} />
+          <TextField id="standard-basic" label="Email" variant="standard" name="email" onChange={handleChange} error={ errors.email}  helperText={errors.email} />
+          </div>
+          <div>
+    
+            <Button type="submit" variant="outlined">Finalizar</Button>
+            <Button type="button" variant="outlined">Cancelar</Button>
+            </div>
+    
+    
+          </form>
+    )
+      }
       </div>
-      <div>
-
-        <Button type="submit" variant="outlined">Finalizar</Button>
-        <Button type="button" variant="outlined">Cancelar</Button>
-        </div>
-
-
-      </form>
-      CheackOut</div>
   
  )
 }

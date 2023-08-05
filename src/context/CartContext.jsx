@@ -25,6 +25,12 @@ const CartContextComponent = ({children}) => {
 const clearCart = () =>{
   setCart ([])
 }
+const getTotalPrice = () => {
+  let total = cart.reduce ((acc, elemento)=>{
+    return acc+ (elemento.price * elemento.quantity)
+  },0)
+  return total
+}
 
 const getQuantityById = (id) => {
   let productoID = cart.find(( elemento ) => elemento.id === +id)
@@ -43,6 +49,7 @@ setCart(newArr)
     clearCart,
     deleteById,
     getQuantityById,
+    getTotalPrice,
     
   };
   return  ( 
