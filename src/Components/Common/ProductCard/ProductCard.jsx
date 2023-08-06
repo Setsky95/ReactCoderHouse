@@ -18,7 +18,7 @@ const ProductCard = ({ item }) => {
         width: "15rem",
         height: "22rem",
         outlineColor: "black",
-        border: "2px solid #87CEEB",
+        border: "2px solid black",
         display: "flex",
         flexDirection: "column", 
         justifyContent: "space-between",
@@ -57,7 +57,7 @@ const ProductCard = ({ item }) => {
       </CardContent>
       <CardActions sx={{ justifyContent: "center" }}>
         <Link to={`/itemDetail/${item.id}`}>
-          <Button size="small" variant="contained">
+          <Button size="small" variant="contained" color="inherit">
             Comprar
           </Button>
         </Link>
@@ -68,3 +68,5 @@ const ProductCard = ({ item }) => {
 
  
 export default ProductCard
+
+

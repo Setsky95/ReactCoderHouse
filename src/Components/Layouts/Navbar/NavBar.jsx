@@ -7,18 +7,21 @@ import {Link} from "react-router-dom";
 import Footer from '../Footer';
 import LogoNav from './LogoNav';
 import nav from './nav.css'
+import CloudQueueRoundedIcon from '@mui/icons-material/CloudQueueRounded';
 
 
 
 const NavBar = () => {
   return (
-    <div className="bg-nav">
+    <Box>
       <Box
         sx={{
           margin: "30px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          borderBottom: '1px solid #ccc', // 
+
           
           
         }}
@@ -26,13 +29,18 @@ const NavBar = () => {
 {           <LogoNav/>
  }
         <ListadoNav />
-
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <Link to="/about">
+<CloudQueueRoundedIcon color="inherit"/>
+          </Link>
         <CarritoNav />
+              </Box>
+
       </Box>
 
       <Outlet />
       <Footer />
-    </div>
+    </Box>
   );
 };
 

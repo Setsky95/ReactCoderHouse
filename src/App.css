@@ -10,7 +10,3 @@ a:link, a:visited, a:active {
   text-decoration:none;
 }
 
-html {
-  background-image: linear-gradient(to bottom, #4682B4, #1E90FF, #0000CD);
-
-}

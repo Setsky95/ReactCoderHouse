@@ -14,7 +14,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock, }) => {
           >
             -
           </Button>
-          <h4>{counter}</h4>
+          <p>{counter}</p>
           <Button
             size="small"
             sx={{ height: 20 }}
@@ -30,8 +30,8 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock, }) => {
           <Button
             size="small"
             variant="contained"
-            color="secondary"
-            sx={{ height: 25 }}
+            color="inherit"
+        sx={{ height: 25 }}
             onClick={() => agregarAlCarrito(counter)}
           >
             Agregar

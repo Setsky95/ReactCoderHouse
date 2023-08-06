@@ -76,7 +76,11 @@ validateOnChange: false
         (<OrderIdSucces orderId={orderId} />) 
         :/* sino cargá esto */ 
         (  
-        <form onSubmit={handleSubmit}>
+          <div style={{marginTop:"150px", marginBottom:"400px"}}>
+<h2 className="webFont"style={{ textAlign: 'center' }}>Completá tus datos para avanzar</h2>
+
+          <div style={{ display:"flex", justifyContent:"center", }}>
+        <form onSubmit={handleSubmit} >
           <div>
           <TextField id="standard-basic" label="Nombre" variant="standard" name="nombre" onChange={handleChange} error={ errors.nombre} helperText={errors.nombre} />
           <TextField id="standard-basic" label="Apellido" variant="standard" name="apellido" onChange={handleChange} error={ errors.apellido} helperText={errors.apellido} />
@@ -84,13 +88,21 @@ validateOnChange: false
           <TextField id="standard-basic" label="Email" variant="standard" name="email" onChange={handleChange} error={ errors.email}  helperText={errors.email} />
           </div>
           <div>
-    
-            <Button type="submit" variant="outlined">Finalizar</Button>
-            <Button type="button" variant="outlined">Cancelar</Button>
+          <div style={{ display:"flex", justifyContent:"center", marginTop:"20px" }}>
+
+            <Button type="submit" sx={{ border: "2px solid black" }}
+                color="inherit">Finalizar</Button>
+            <Button type="button" sx={{ border: "2px solid black" }}
+                color="inherit">Cancelar</Button>
             </div>
-    
+            </div>
+
     
           </form>
+          </div>
+          </div>
+
+
     )
       }
       </div>

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom'
 const LogoNav = () => {
   return (
     <Link to="/" >
-<Typography sx={{fontFamily:"times",fontWeight:"bold", color:"white"}} variant='h4'>D</Typography>
+<Typography sx={{fontFamily:"times",fontWeight:"bold", color:"black"}} variant='h4'>D</Typography>
+
+
     </Link>  )
 }
 

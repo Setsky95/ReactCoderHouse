@@ -7,6 +7,7 @@ import { db } from "../../../firebaseConfig";
 import {getDoc, collection, doc} from "firebase/firestore";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../../Common/Loader";
 
 
 const ItemDetailContainer = () => {
@@ -51,18 +52,22 @@ toast.success(' Producto agregado!', {
  
 
 };
-  return (
-    <>
-    <ItemDetail
-      product={product}
-      agregarAlCarrito={agregarAlCarrito}
-      cantidadEnCarrito={cantidadEnCarrito}
-    />
-    <ToastContainer />
-    </>
+return product.title? <>
+<ItemDetail
+  product={product}
+  agregarAlCarrito={agregarAlCarrito}
+  cantidadEnCarrito={cantidadEnCarrito}
+/>
+<ToastContainer />
+</>: <Loader />
 
-  );
-};
 
+    
+  };
+
+
+
+/* return items.length === 0? <Loader />:<ProductList items={items} />;
+ */
 
 export default ItemDetailContainer;

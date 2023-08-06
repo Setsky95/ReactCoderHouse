@@ -1,19 +1,40 @@
-import React from 'react'
-import { Box } from '@mui/material'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+const SmallerAccordion = styled(Accordion)({
+  transform: 'scale(0.8)',
+});
 
-const ListadoNav = () => {
+export default function ListadoNav() {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-evenly' , gap: '10px'   }}>
-    
-    <Link className='webFont' to="/category/Amor"><li> Amor </li></Link>
-    <Link className='webFont'  to="/category/Aventura"> <li>Aventura</li></Link>
-    <Link className='webFont'  to="/category/Dinero"> <li>Dinero</li></Link>
+    <div>
+      <SmallerAccordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Categorías</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            <Link className='webFont' to="/category/Amor"><li>Amor</li></Link>
+            <Link className='webFont' to="/category/Aventura"><li>Aventura</li></Link>
+            <Link className='webFont' to="/category/Dinero"><li>Dinero</li></Link> 
+            <Link className='webFont' to="/"><li>Todas</li></Link> 
 
-   
-    
-    </Box>)
+          </Typography>
+        </AccordionDetails>
+      </SmallerAccordion>
+    </div>
+  );
 }
 
-export default ListadoNav
+     

@@ -9,7 +9,7 @@ const Footer = () => {
         sx={{
           width: "100%",
           height: "auto",
-          backgroundColor: "primary.main",
+          backgroundColor: "#595757",
           paddingTop: "1rem",
           paddingBottom: "1rem",
         }}
@@ -17,12 +17,12 @@ const Footer = () => {
         <Container maxWidth="lg">
           <Grid container direction="column" alignItems="center">
             <Grid item xs={12}>
-              <Typography color="black" variant="h5">
-                Dreamer
+              <Typography color="white" variant="h5">
+                Dream
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography color="textSecondary" variant="subtitle1">
+              <Typography color="white" variant="subtitle1">
                 {`${new Date().getFullYear()} | CoderHouse | React | Sebastian Pavlotsky`}
               </Typography>
             </Grid>

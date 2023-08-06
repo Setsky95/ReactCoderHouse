@@ -10,6 +10,7 @@ import CartContainer from './Components/Pages/Cart/CartContainer'
 import CheckOutContainer from './Components/Pages/checkout/CheckOutContainer'
 import NavBar from './Components/Layouts/Navbar/NavBar'
 import CartContextComponent from './context/CartContext'
+import AboutUs from './Components/Pages/AboutUs'
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/category/:categoryName"element={<ProductListContainer />}/>
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/checkout" element={<CheckOutContainer />} />
+            <Route path="/about" element={<AboutUs />} />
+
 
             </Route>
             
