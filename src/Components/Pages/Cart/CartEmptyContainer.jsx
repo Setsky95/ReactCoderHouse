@@ -7,7 +7,7 @@ const CartEmptyContainer = () => {
 
     <div style={{display:"flex", justifyContent:"center"}}>
     <Link to="/" >
-    <img src="../src/imgs/giphy.gif" alt="gif" style={{ display:"flex", justifyContent:"center"}} />
+    <img src="https://res.cloudinary.com/dgrg0uxvz/image/upload/v1691352138/giphy_vowu4g.gif" alt="gif" style={{ display:"flex", justifyContent:"center"}} />
 </Link>
     </div>
     </div>
