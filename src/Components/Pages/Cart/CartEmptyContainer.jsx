@@ -7,7 +7,7 @@ const CartEmptyContainer = () => {
 
     <div style={{display:"flex", justifyContent:"center"}}>
     <Link to="/" >
-    <img src="src\Imgs\png-gif-3.gif" alt="gif" style={{ display:"flex", justifyContent:"center"}} />
+    <img src="../src/imgs/giphy.gif" alt="gif" style={{ display:"flex", justifyContent:"center"}} />
 </Link>
     </div>
     </div>
@@ -16,3 +16,4 @@ const CartEmptyContainer = () => {
 }
 
 export default CartEmptyContainer
+
