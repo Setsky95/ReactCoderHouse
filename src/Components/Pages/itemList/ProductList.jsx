@@ -5,7 +5,7 @@ const ProductList = ({items}) => {
   return (
     <div>
     <Box sx={{
-     backgroundColor: "primary.light",
+     backgroundColor: "white",
      paddingBottom: "100px",
      paddingTop: "100px",
      paddingRight:"20px",

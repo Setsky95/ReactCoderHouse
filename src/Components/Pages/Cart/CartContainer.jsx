@@ -5,10 +5,30 @@ import './CartContainer.css';
 import CartEmptyContainer from './CartEmptyContainer';
 import { Link } from 'react-router-dom';
 import CheackOut from '../checkout/CheackOut';
+import Swal from 'sweetalert2';
 
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice } = useContext(CartContext);
+
+let limpiar =()=>{
+  Swal.fire({
+    title: 'Seguro quiere borrar el carrito?',
+    showDenyButton: true,
+    showCancelButton: false,
+    confirmButtonText: 'si',
+    denyButtonText: `no`,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      clearCart()
+      Swal.fire('Carrito eliminado!', '', 'success')
+    } else if (result.isDenied) {
+      Swal.fire('No se han generado cambios', '', 'info')
+    }
+  })
+}
+
+
 let total = getTotalPrice()
   return (
     cart.length === 0 ? (
@@ -35,7 +55,7 @@ let total = getTotalPrice()
           ))}
 
           <h2>total: {total} </h2>
-          <Button sx={{ border: "2px solid lightblue" }} onClick={clearCart}>LIMPIAR CARRITO</Button>
+          <Button sx={{ border: "2px solid lightblue" }} onClick={limpiar}>LIMPIAR CARRITO</Button>
           <Link to="/checkout">
           <Button sx={{ border: "2px solid lightblue" }}>FINALIZAR COMPRA</Button>
           </Link>

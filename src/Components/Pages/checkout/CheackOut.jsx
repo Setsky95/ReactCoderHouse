@@ -9,6 +9,8 @@ import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import OrderIdSucces from "./OrderIdSucces";
+import Swal from "sweetalert2"
+
 
 
 
@@ -36,6 +38,15 @@ buyer: data,
 items: cart,
 total: total,
 date:serverTimestamp() };
+Swal.fire({
+  title: '¡Compra realizada!',
+  width: 600,
+  padding: '1em',
+  color: '#716add',
+  background: '#fff url(https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fcloud-art&psig=AOvVaw1Lw03jKnPL08vj5IaBEXXn&ust=1691422797979000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDBzIqvyIADFQAAAAAdAAAAABAF)',
+
+})
+
 
 // CREACION DE ORDEN QUE VA A IR A FIRESTORE //
 let ordersCollections = collection ( db,"orders" )

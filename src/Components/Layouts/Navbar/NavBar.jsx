@@ -6,22 +6,25 @@ import {Outlet} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from '../Footer';
 import LogoNav from './LogoNav';
+import nav from './nav.css'
 
 
 
 const NavBar = () => {
   return (
-    <div>
+    <div className="bg-nav">
       <Box
         sx={{
           margin: "30px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          
+          
         }}
       >
-{/*           <LogoNav/>
- */}
+{           <LogoNav/>
+ }
         <ListadoNav />
 
         <CarritoNav />

@@ -1,6 +1,6 @@
 import { Button } from "@mui/material"
 
-const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
+const Counter = ({ counter, setCounter, agregarAlCarrito, stock, }) => {
   return (
     <div style={{ display: "flex" }}>
       <div>

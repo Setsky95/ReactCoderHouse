@@ -11,7 +11,7 @@ const CartContextComponent = ({children}) => {
     if (existente){
     let newArr = cart.map(elemento =>{
       if (productoAgregado.id === elemento.id){
-      return  {...elemento, quantity:elemento.quantity+ productoAgregado.quantity}
+      return  {...elemento, quantity:productoAgregado.quantity}
     }else {
       return elemento
     }
@@ -22,6 +22,7 @@ const CartContextComponent = ({children}) => {
     else {
       localStorage.setItem("cart", JSON.stringify([...cart, productoAgregado]))
     setCart([...cart, productoAgregado]);}
+    
   };
 
 const clearCart = () =>{
@@ -36,10 +37,11 @@ const getTotalPrice = () => {
 }
 
 const getQuantityById = (id) => {
-  let productoID = cart.find(( elemento ) => elemento.id === +id)
-
-  return productoID?.quantity
+  let cantidadPorId = cart.find(( e ) => e.id === +id)
+  return cantidadPorId?.quantity
 }
+
+
 
 const deleteById = (id) => {
 let newArr= cart.filter ((elemento) =>  elemento.id !== id)

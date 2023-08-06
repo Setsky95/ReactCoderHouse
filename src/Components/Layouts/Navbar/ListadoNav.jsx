@@ -7,9 +7,9 @@ const ListadoNav = () => {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-evenly' , gap: '10px'   }}>
     
-    <Link to="/category/Amor"><li> Amor </li></Link>
-    <Link to="/category/Aventura"> <li>Aventura</li></Link>
-    <Link to="/category/Dinero"> <li>Dinero</li></Link>
+    <Link className='webFont' to="/category/Amor"><li> Amor </li></Link>
+    <Link className='webFont'  to="/category/Aventura"> <li>Aventura</li></Link>
+    <Link className='webFont'  to="/category/Dinero"> <li>Dinero</li></Link>
 
    
     
